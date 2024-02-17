@@ -5,7 +5,9 @@
   background-color: white;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   display: flex;
+  overflow: hidden;
 }
+
 .modal__image_carousal {
   width: calc(90% - 10px);
   object-fit: cover;
@@ -108,7 +110,7 @@
 @media only screen and (min-width: 1281px) {
   .modal {
     width: 80%;
-    height: 80%;
+    height: 95vh;
     max-width: 1800px;
     justify-content: space-between;
     align-items: center;
