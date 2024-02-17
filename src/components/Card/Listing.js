@@ -4,13 +4,13 @@ import "./Listing.css";
 import { motion } from "framer-motion";
 
 const Listing = ({ data, open }) => {
-  const { imageUrl, price, address, numBedroom, numWashrooms, livingSpace } = data;
+  const { imageUrl, price, address } = data;
 
   return (
     <motion.div className="listing" onClick={open} whileHover={{ scale: 1.1 }}>
       <div className="listing__content">
         <div className="listing__image-container">
-          <img className="listing__image" alt="real estate mansion" src={imageUrl} />
+          <img className="listing__image" alt="product" src={imageUrl} />
         </div>
         <div className="listing__details">
           {/* <div className="listing__type">Adopt Me</div> */}

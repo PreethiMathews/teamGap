@@ -3,6 +3,8 @@ import "./Modal.css";
 import Feature from "./Feature";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+var Carousel = require("react-responsive-carousel").Carousel;
 
 const Modal = ({ data, close }) => {
   const { imageUrl, price, address, description, numBedroom, numWashrooms, livingSpace } = data;
@@ -32,7 +34,18 @@ const Modal = ({ data, close }) => {
 
   return (
     <motion.div className="modal" variants={modalVariants} onClick={(e) => e.stopPropagation()}>
-      <motion.img className="modal__image" alt="real estate mansion" src={imageUrl} variants={imageVariants}></motion.img>
+      <Carousel className="modal__image_carousal" showArrows={true}>
+        <div className="modal__image">
+          <motion.img className="modal__image_v1" alt="real estate mansion" src={imageUrl} variants={imageVariants}></motion.img>
+        </div>
+        <div className="modal__image">
+          <motion.img className="modal__image_v1" alt="real estate mansion" src={imageUrl} variants={imageVariants}></motion.img>
+        </div>
+
+        <div className="modal__image">
+          <motion.img className="modal__image_v1" alt="real estate mansion" src={imageUrl} variants={imageVariants}></motion.img>
+        </div>
+      </Carousel>
       <motion.div className="modal__info" variants={modalInfoVariants}>
         <motion.div className="modal__row" variants={modalRowVariants}>
           <span className="modal__price">{price}</span>
